@@ -1,0 +1,12 @@
+Permite manipulação de arquivos do sistema
+
+Importando:
+
+  const fs = require("fs");
+
+Metodos
+
+  fs.writeFileSync("CaminhoArquivo", "Conteúdo")
+    // Salva um arquivo no computador de maneira síncrona (Bloqueia o loop)
+  fs.writeFile("CaminhoArquivo", "Conteúdo", Callback(err))
+    // Salva um arquivo no computador de maneira assíncrona (Não bloqueia o loop)

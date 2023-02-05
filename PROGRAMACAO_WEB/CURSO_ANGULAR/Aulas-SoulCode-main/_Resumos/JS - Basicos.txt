@@ -1,0 +1,102 @@
+      Roda os scripts só depois de carregar a pg
+                          ↓
+<script src="script.js" defer></script>
+
+
+Casting -> Transformar um tipo de dado para outro
+    parseInt(num, base) -> converte para inteiro, base é opcional para converter
+                           de outras bases numéricas
+    parseFloat() -> converte para float
+    umNumeroFloat.toFixed(x) -> transforma para uma string com x casas decimais
+
+console.log(); -> imprime no console
+                  // %c permite usar CSS no console.
+
+        Ex: console.log(`Uma %cString`, "cod css"), aplica css do %c em diante;
+
+documento.write(); -> escreve no HTML
+document.writeln(); -> igual ao anterior mas adiciona um "enter" no final
+alert(); -> cria um popup
+prompt(Mensagem); -> Cria um popup e retorna uma string digitada
+typeof X; -> Retorna o tipo da variavel/valor
+
+  window.innerWidth => largura da janela
+  window.innerHeight => altura da janela
+  screen.width => largura da tela
+  screen.height => altura da tela
+  .scrollTop => quanto um elemento foi rolado do topo
+  .scrollLeft => quanto um elemento foi rolado da esquerda
+
+Operadores de decremento e incremento
+    ++a -> incrementa 1 e retorna a
+    a++ -> retorna a e incrementa 1
+    --a -> diminui 1 e retorna a
+    a-- -> retorna a e diminui 1
+
+Operadores Logicos
+    && (e) -> retorna true caso os dois sejam verdadeiros
+    || (ou) -> se ao menos um for verdadeiro retorna true
+    ^ (ou exclusivo) -> se somente um for verdadeiro retorna true
+
+Operador condicional
+    Atribui um valor a uma variável baseado em uma condição
+    -> condição ? seVerdadeiro: seFalso;
+    EX: eAdulto = idade<18 ? "Muito novo" : "Adulto";
+
+Testes
+
+    if (condition) {
+        statements
+    else if (condition)
+        statements
+    else
+        statements
+    }
+
+    switch (expression) {
+    case n1:
+        statements
+        break;
+    case n2:
+        statements
+        break;
+    default:
+        statements
+    }
+
+Loops
+
+    for (X; Y; Z) { Código a ser executado }
+        X = Inicializador Ex: i = 1
+        Y = Se for verdade o loop executa Ex: i < 10
+        Z = Ocorre a cada loop Ex: i++
+
+    OBS: X, Y e Z são opcional desde que suas funçoes sejam executadas
+    em outro local. EX; X declarado antes do loop, Y ser um brake no
+    meio do loop e Z incrementar algum valor durante o loop.
+
+
+    while (condition) {
+        Código a ser executado
+    }
+
+    do {
+        Código a ser executado
+    }
+    while (condition);
+
+    OBS:
+        break -> Encerra todo o loop
+        continue -> Encerra uma unica volta do loop
+
+Seletores DOM
+
+    document.querySelector("Uma String"); // Scha a primeira ocorrencia de "Uma
+                                          // String" no DOM e retorna ele;
+    document.getElementByID("string"); Acha o elemento com a id "string";
+    document.getElementsByClassName("string"); //Acha os elementos com as
+                                               //classes "string";
+    document.getElementsByTagName("string"); // Acha os elementos com as
+                                             // tags "string";
+    document.getElementsByName("string"); // Acha os elementos com a tag name
+                                          // com valor "string";

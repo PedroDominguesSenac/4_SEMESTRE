@@ -1,0 +1,138 @@
+Hooks são uma maneiras de usar funcionalidades do React sem precisar de classes
+
+  Hooks Básicos:
+    - useState
+    - useEffect
+    - useContext
+
+  Outros Hooks:
+    - useReducer
+    - useCallback
+    - useMemo
+    - useRef
+    - useImperativeHandle
+    - useLayoutEffect
+    - useDebugValue
+
+  Recomendações:
+    - Não usar dentro de loops ou ifs, assim os hooks são executados na mesma
+      ordem cada vez que um componente renderiza;
+    - Não usar hooks em funções normais do JS, apenas de dentro de componentes
+      funcionais do React;
+    - Se for criar um Hook customizado usar sempre nomear ele com 'use';
+
+
+▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲
+--------------------------------   useState   ---------------------------------
+▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼
+
+Cria um state (uma variável) e um setter pra alterar ele.
+
+  Sintaxe:
+
+    const [nome, setNome] = useState(valorInicial)
+            ↑       ↑
+       NomeVar  NomeSetter
+
+  Funcionamento:
+
+    - Quando usamos o setter trocamos o valor e o componente renderiza novamente;
+    - Se o valor permanece inalterado o React encerra a renderização nesse ponto,
+      sem executar o resto das funções do componente;
+    - Não preserva os outros componentes de uma array ou um objeto quando altera
+      um dos itens, por isso precisamos desconstruir o valor antigo antes;
+    - Não usar diretamente o valor atual do state para calcular um novo valor,
+      para isso usar uma arrow function dentro do setter e ela automáticamente
+      recebe o valor atual como parâmetro.
+
+        Ex: setNome(nome + 1) // Não é recomendado, pois pode causar bugs;
+            setNome( oldVal => oldVal + 1) // Mais seguro;
+                        ↑
+            É o valor passado automáticamente pelo setter, e armazenamos ele
+            na variável nomeada oldVal;
+
+
+▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲
+--------------------------------   useEffect   --------------------------------
+▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼
+
+Executa uma ação após o componente renderizar, nas etapas componentDidMount(),
+componentDidUpdate(), and componentWillUnmount().
+
+  Sintaxe:
+
+    useEffect(
+      () => {
+        // Executa algo
+      return () => {Função de limpeza} // Return é opcional e explicado a seguir
+      }, [dependencias]      // , [dependencias] é opcional e explicado a seguir
+    );
+
+  Funcionamento
+
+    - Usamos [dependencias] para passar as variaveis locais usadas em useEffect,
+      assim ele só é executado se houver alteração nelas;
+    - Para executar uma vez na criação do componente, passamos a array vazia [];
+    - return pode retornar uma função que vai ser usada antes do componente ser
+      desmontado, faz a função de componentWillUnmount();
+    - Roda depois da renderização do componente, se quisermos rodar antes da
+      renderização devemos usar useLayoutEffect que é idêntico, com exceção do
+      momento em que é executado;
+
+
+▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲
+-------------------------------   useContext   --------------------------------
+▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼
+
+Permite passar data através da árvore de componentes, sem ter que passar props
+manualmente em todos os níveis;
+
+OBS: Podemos passar também variaveis provenientes de useState/useReducer para
+manipular esses valores a partir de componentes filhos;
+
+  Sintaxe:
+
+    No elemento pai que possui os dados que quermos propagar:
+
+    export const NomeDoContexto = React.createContext();
+
+
+    No return desse elemento pai:
+
+      <NomeDoContexto.provider value={DadosQueVamosPropagar} >
+        // Elementos onde vamos propagar os dados
+      <NomeDoContexto.provider/>
+
+
+    No elemento que vai usar o contexto:
+
+      import {NomeDoContexto} from "./ElementoPai";
+
+      const umaVariavel = useContext(NomeDoContexto);
+
+
+▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲
+-------------------------------   useReducer   --------------------------------
+▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼
+
+  Serve para controlar states, é uma versão mais complexa de useState.
+
+
+  Sintaxe:
+
+    Fora da função principal
+
+      const valorInicial = ???
+      const funcRed (valorAtual, acao)=>{}// retorna um novo valor, dependendo
+                                          // da ação que passamos com o dispatch
+                                          // OBS: por conveção usamos um switch;
+
+    Dentro da função principal
+
+    const[valor, nomeDispatch] = useReducer(funcRed, valorInicial)
+            ↑
+       variável que vamos manipular chamando nome nomeDispatch("comando");
+
+    OBS: tanto o valor, quanto o nomeDispatch podem ser objetos com múltiplos
+    parâmetros;
+

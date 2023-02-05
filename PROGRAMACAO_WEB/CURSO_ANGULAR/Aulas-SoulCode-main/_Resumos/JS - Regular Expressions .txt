@@ -1,0 +1,74 @@
+https://blog.bitsrc.io/a-beginners-guide-to-regular-expressions-regex-in-javascript-9c58feb27eb4
+
+Expressões
+
+  /txt/ => Procura por txt;
+  /txtA|txtB/ => Procura por txtA ou txtB;
+  /txt./ => Aceita qualquer caractere no lugar do ponto;
+  /txt[xyz]/ => Aceita txt com x, y ou z no final;
+  /txt[d-h]/ => Aceita txt com d, e, f ,g ou h no final;
+  /txt[0-9]/ => Aceita txt com qualquer número no final;
+  /txt[a-z0-9]/ => Aceita txt com qualquer número ou letra no final;
+  /txt[^3-5]/ => Aceita txt com qualquer caractere no final que não seja 3, 4 ou 5;
+  /txt[ba+]/ => Aceita txt com b e um ou mais "a"s no final, (ba, baa, baaa, etc);
+  /txt[ba*]/ => Aceita txt com b e zero ou mais "a"s no final, (b, ba, baa, etc);
+  /txt[0-9]*/ => Aceita txt com zero ou mais números no final;
+  /txt[0-9]+?/ => Busca o txt com zero ou mais números no final, que seja o mais curto;
+  /^[0-9]txt/ => Busca um número no início da string;
+  /txt[0-9]$/ => Busca um número no fim da string;
+  /tx?t/ => O x é opcional, (tt ou txt);
+
+
+Modificadores
+
+  | => para incluir um OU na expressão
+  () => para avaliar um trecho em separado
+  {min,max} => para aceitar no minimo e no máximo
+  {exato} => para aceitar um numero exato de caracteres
+
+  Ex /[0-9]{2,5}+(@|at)[0-9]{3}/ => de 2 a 5 numeros, @ ou at no meio, 3 numeros;
+
+
+Abreviaturas
+
+  \w => equivalente a [A-Za-z0-9_];
+  \W => equivalente a [^A-Za-z0-9_];
+  \d => equivalente a [0-9];
+  \D => equivalente a [^0-9];
+  \s => aceita enter, tab, nova linha, ou espaço;
+  \S => ao contrário do anterior;
+
+
+Opções
+
+    /../i => ignora maiúsculas e minúsculas;
+    /../g => repete o comando varias vezes;
+
+
+Funções:
+
+    /rEx/.test(string) // Testa a string com uma regEx e retorna um booleano
+    String.match(/rEx/) // Retorna a string achada, o index, e a string
+                        // original em uma array;
+    String.replace(rEx, "xxx") // Substitui os matchs por "xxx", Podemos usar
+                               // grupos de busca no "xxx" usando $1 $2 $3 etc;
+
+
+Lookahead
+
+  Positivo => Testa se o elemento esta presente na string, mas não retorna ele;
+
+    (?=...) // a expressao a ser procurada é ...
+
+  Negativo =>   Positivo => Testa se o elemento não esta presente na string;
+
+    (?!...) // a expressao a ser procurada é ...
+
+
+Repetição
+
+  Podemos procurar um (grupo de regex) resultado repetido, usando \numero, onde numero
+  é a ordem que aparece o grupo de regex;
+
+  Ex: /(\w+)\s\1/ => \1 acha o que (\w+) achou, que é o primeiro grupo;
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADO1</title>
+</head>
+<body>
+  <form onsubmit="Submit(event)">
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+    <br>
+    <br>
+    <label for="idade">Idade:</label>
+    <input type="text" id="idade" required>
+    <br>
+    <br>
+    <input type="radio" value="Masculino" id="masc" name="sexo" value="30">
+    <label for="nome">Masculino</label><br>
+    <input type="radio" value="Feminino" id="femi" name="sexo" value="60">
+    <label for="age2">Feminino</label><br>  
+
+    <br>
+
+    <button>Submit</button>
+    <br>
+    <br>
+    <div id="call"></div>
+
+  </form>
+</body>
+<script>
+  function Submit(e){
+    e.preventDefault();
+    let nome = document.getElementById("nome").value;
+    let idade = document.getElementById("idade").value;
+    let genero = document.getElementsByName("sexo");
+    let sexo;
+    genero.forEach((x) => {
+      if(x.checked){
+        sexo = x.value
+      }
+    })
+    let dado = {
+      nome: nome,
+      idade: idade,
+      sexo: sexo,
+    }
+    document.getElementById("call").innerHTML = `Nome: ${dado.nome}<br>Idade: ${dado.idade}<br>Sexo: ${dado.sexo}`;
+  }
+</script>
+</html>

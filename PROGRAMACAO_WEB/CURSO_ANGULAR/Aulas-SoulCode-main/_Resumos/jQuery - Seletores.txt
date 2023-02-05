@@ -1,0 +1,28 @@
+Seletores
+
+    ("TagName") // seleciona pela tag;
+    (.className) // seleciona pela tag;
+    (["atributo"]) // seleciona os elementos que contem ["atributo"];
+    ('[atributo="valor"]') // Elementos que contem atributo com "valor";
+        Obs: Podemos usar outros operadores no lugar do =;
+               != // Que não contenham;
+               ^= // Que começe com;
+               $= // Que termine com;
+               *= // Que exista em algum lugar;
+
+
+Funcões Seletoras (podemos filtrar com o seletor)
+
+    .parent("seletor") // Retorna o elemento pai;
+    .parents("seletor") // Retorna todos os elementos ancestrais";
+    .find("seletor") // Procura os elementos filhos com o seletor
+    .last() // o ultimo da array;
+    .first() // o primeiro da array;
+    .eq() // funciona como [] mas aceita valor negativo também;
+    .not("seletor") // Todos, excluindo os do seletor;
+    .has("seletor") // Retorna os que tenham elementos filhos com seletor
+    .next() // Retorna o próximo elemento irmão
+    .prev() // Retorna elemento irmão anterior
+    .sibilings() // Retorna todos elementos irmãos
+
+

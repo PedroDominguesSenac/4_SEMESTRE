@@ -1,0 +1,37 @@
+Básico
+
+    .list-group => na <ul>, a lista é formatada automáticamente;
+    .list-group-item => Em cada item da lista usamos (<li>, <a>, <button>);
+
+Opções para itens de lista:
+
+    .disabled => Mostar o item como desativado;
+    .active => Mostra o item como ativado;
+    .list-group-flush => remove bordas e cantos do item;
+    .list-group-horizontal => mostra a lista na horizontal;
+
+
+Opções para <a> ou <button>:
+
+    .list-group-item-action => Destaca com o hover;
+
+
+Opções para <button>:
+
+    Podemos usar o atributo disabled no lugar da classe .disabled
+
+
+Classes contextuais:
+
+    .list-group-item-primary => Aplica o estilo primary;
+    .list-group-item-secondary => Aplica o estilo secondary;
+    .list-group-item-success => Aplica o estilo success;
+    .list-group-item-danger => Aplica o estilo danger;
+    .list-group-item-warning => Aplica o estilo warning;
+    .list-group-item-info => Aplica o estilo info;
+    .list-group-item-light => Aplica o estilo light;
+    .list-group-item-dark => Aplica o estilo dark;
+
+    Queen - Fat Bottomed Girl
+    Heart - Barracuda
+    Van Hallen - Runnin' with the Devil

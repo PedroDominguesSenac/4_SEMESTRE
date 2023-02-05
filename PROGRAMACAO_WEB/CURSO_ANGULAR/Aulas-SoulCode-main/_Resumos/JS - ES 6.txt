@@ -1,0 +1,69 @@
+var, let e const
+
+    var -> escopo global, não mostra erro quando redeclarada, hoisting
+    let -> escopo local, não pode ser declarada duas vezes
+    const -> escopo local, não pode ser reatribida, é comum nomear com
+             UPPER_CASE
+
+
+Spread operator
+
+    ...nomeVar
+
+    a) Na declaração de uma função oermitem passar multiplos parâmetros
+       que serão armazenados em uma array para uso na função;
+
+       EX: const umaFunção = (...args) => alguma coisa
+
+    b) Podem ser usador para "deconstruir" a array, passando os valores
+       da mesma separados por vírgula;
+
+
+Destructuring
+
+    Retorna os valores dos itens de arrays ou objetos de maneira mais
+    simples.
+
+        EX:
+            const nums = [5, 7, 9, 11];
+            const obj = {x:4, y:6, z:8};
+
+            let [a, b] = [1 , 2] // a = 1; b =2;
+            let [c, d] = nums // c = 5; d = 7;
+            let [e, ...f] = nums // e = 5; f = [7, 9, 11];
+            let [g,,,h] = nums // g = 5; h = 11;
+            let {y, z} = obj // y = 6; z = 8;
+
+    Podemos usar diretamente um uma função:
+
+        const fooName = ({x,z}) => etc...
+
+        fooName(obj) // vai ter x = 4 e z = 8;
+
+    Podemos usar a seguinte sintaxe para mudar o nome da variável:
+
+            let {z: novoZ} = obj // novoZ = 8;
+
+
+String literal
+
+    Usamos ` no lugar das aspas, com ${varName} podemos inserir variáveis
+    aceita também enter para separar as linhas.
+
+
+Export
+
+    export {foo1, foo2, etc...} //Permite importar a função posteriormente;
+
+    export default function foo(x, y) { // Exporta essa função como padrão
+        return x + y;                   // em um arquivo. Cada arquivo pode
+    }                                   // ter apenas uma função padrão;
+
+Import
+
+    import {foo1, foo2,} from "./outro_arq.js" // Importa foo1 e foo2;
+
+    import * as nomeObj from "./outro_arq.js" // Importa todas as funçoes para
+                                              // um objeto nomeObj;
+
+    import umNome from "./outro_arq.js"; // Importa uma função padrão

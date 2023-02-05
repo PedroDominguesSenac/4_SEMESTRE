@@ -1,0 +1,51 @@
+.card {
+  border: 2px solid black;
+  box-shadow: 1px 1px 0 black, 2px 2px 0 black;
+  width: 500px;
+}
+
+.card-title {
+  padding: 1rem;
+  border-bottom: 2px solid black;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-controle {
+  display: flex;
+  border-top: 2px solid black;
+}
+
+.custom-button {
+  width: 35%;
+  padding: 0.25rem;
+  margin: 1rem auto;
+  display: inline-block;
+  border: 0;
+  color: black;
+  font-family: "press start 2p";
+  border: 3px solid black;
+  background-color: transparent;
+}
+
+.custom-button:hover {
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: black;
+}
+
+.removido {
+  opacity: 0.5;
+  background-color: rgb(236, 236, 236);
+}
+
+.removido .card-title {
+  text-decoration: line-through;
+}
+
+.removido .card-content {
+  text-decoration: line-through;
+}

@@ -1,0 +1,15 @@
+resize: -> Permite redimensiona um elemento block, respeita min e max;
+
+var(--nome-var, X) -> define uma variavel dentro de uma propriedade, com
+                      um valor padrão;
+
+aspect-ratio: X / Y; -> define uma proporção pro elemento;
+
+scroll-padding-top: X; -> adiciona um offset para as âncoras;
+
+conic-gradient(cor1 Xturn, cor2 Xturn Yturn, etc...)
+  Cria uma pie chart com as cores. Turn deve totalizar 1
+
+
+Alterando variavel CSS com o JS:
+  document.documentElement.style.setProperty("nomeVar", novoValor)

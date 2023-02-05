@@ -1,0 +1,18 @@
+.custom-input-button {
+  width: 40%;
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  border: 0;
+  color: black;
+  font-family: "press start 2p";
+  border: 3px solid black;
+  background-color: transparent;
+}
+
+.custom-input-button:hover {
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: black;
+}

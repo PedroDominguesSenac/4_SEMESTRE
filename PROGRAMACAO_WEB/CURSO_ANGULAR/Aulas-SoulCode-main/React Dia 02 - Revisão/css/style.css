@@ -1,0 +1,332 @@
+/*RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+}
+
+header img {
+    width: 100px;
+}
+
+/*header nav{
+    width: 50%;
+    display: flex;
+    background-color: blueviolet;
+}*/
+
+header li a {
+    color: #484942;
+}
+
+header li {
+    margin: 10px 15px;
+    float: left;
+}
+
+header li:first-child {
+    margin-left: 0;
+}
+
+header li:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+    }
+    header img {
+        margin-bottom: 15px;
+    }
+}
+
+/*HERO*/
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.2em;
+    margin-bottom: 15px;
+}
+
+.hero h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.hero .btn {
+    background-color: white;
+    border-radius: 4px;
+    color: black;
+    padding: 20px 50px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero h3 {
+        font-size: 1.5em;
+    }
+}
+
+/*HOTEL*/
+.hotel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+}
+
+.hotel h3 {
+    font-size: 2em;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.hotel p {
+    max-width: 800px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.hotel hr {
+    width: 200px;
+    height: 2px;
+    background-color: #191c03;
+    margin-bottom: 70px;
+    border: none;
+}
+
+.hotel .grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hotel .grid li {
+    height: 350px;
+    padding: 20px;
+    border-radius: 4px;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+}
+
+.hotel .grid li.small {
+    flex-basis: 40%;
+}
+
+.hotel .grid li.large {
+    flex-basis: 60%;
+}
+
+@media (max-width: 700px) {
+    .hotel .grid li.small,
+    .hotel .grid li.large {
+        flex-basis: 100%;
+    }
+}
+
+/*INFO*/
+.info {
+    display: flex;
+    background-color: #191c03;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+}
+
+.info h3 {
+    font-size: 2em;
+    margin-bottom: 35px;
+    text-align: center;
+    color: white;
+}
+
+.info p {
+    max-width: 800px;
+    margin-bottom: 35px;
+    text-align: center;
+    color: white;
+}
+
+.info hr {
+    width: 200px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 70px;
+    border: none;
+}
+
+.info .grid {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.info .grid li {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.info .grid li i {
+    color: #c3c63b;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+.info .grid li h4 {
+    color: #c3c63b;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.info .grid li p {
+    color: white;
+}
+
+@media (max-width: 850px) {
+    .info .grid {
+        flex-direction: column;
+    }
+}
+
+/*Assina*/
+.assina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+}
+
+.assina h3 {
+    font-size: 2em;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.assina p {
+    max-width: 800px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.assina hr {
+    width: 200px;
+    height: 2px;
+    margin-bottom: 70px;
+    background-color: black;
+    border: none;
+}
+
+.assina form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 800px;
+}
+
+.assina input {
+    padding: 15px;
+    border: 1px solid #c3c63b;
+    border-radius: 4px;
+    margin-right: 15px;
+    flex: 1;
+}
+
+.assina button {
+    padding: 15px;
+    background-color: #c3c63b;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    flex: 1;
+}
+
+@media (max-width: 700px) {
+    .assina input {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/*FOOTER*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #191c03;
+    padding: 50px 0px;
+}
+
+footer ul {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+footer ul li {
+    margin-right: 10px;
+}
+
+footer ul li:last-child {
+    margin-right: 0;
+}
+
+footer ul li a {
+    color: #c3c63b;
+    font-size: 2rem;
+}
+
+footer p {
+    color: #c3c63b;
+    text-align: center;
+}

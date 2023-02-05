@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container form {
+  border: 2px solid black;
+  height: 30rem;
+  width: 35rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  border-bottom: 2px solid black;
+}
+
+.form-title {
+  text-align: center;
+  font-variant: small-caps;
+}
+
+.form-content {
+  padding: 1rem;
+  flex-grow: 1;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr) 0.6fr;
+  grid-template-areas:
+    " fn    ln  "
+    "email email"
+    "pass  pass "
+    " btn   btn ";
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size: 1.2rem;
+}

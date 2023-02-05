@@ -1,0 +1,262 @@
+body {
+  font-family: Roboto, sans-serif;
+  color: #5E2Eff;
+  background-image:url("img/img03.jpg");
+  background-repeat:repeat;
+ }
+
+
+h1, h2, h3 {
+  font-family: Kiwi Maru, Tahoma;
+  color:#000000;
+}
+.botao {
+  color: #FFFFFF;
+  text-decoration:none;
+  padding: 15px 30px;
+  background-color: #000000;
+  font-size: .9em;
+  border-radius: 5px; //raio do botão
+}
+
+/*Navegação */
+
+nav{
+display:flex;
+flex-direction: column;
+align-items: center;
+background-color: #191970
+}
+
+nav > a{
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 32px;
+  font-family: "Zen Dots", cursive;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+
+}
+
+nav ul li{
+  text-align:center;
+  width:100%;
+
+}
+
+nav ul li a{
+  display: inline;
+  padding: 10px 0;
+  width: 100%;
+  text-decoration: none;
+  color:#FFFFFF;
+}
+
+/* cabeçalho */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../img/img1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1{
+  color: #FFFFFF;
+}
+
+header p{
+  margin-botton:2em;
+}
+
+#sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 10px 20px 20px;
+  background-color: #191970;
+  color: #FFFFFF;
+
+}
+
+#sobre h2{
+  color: #FFFFFF;
+}
+
+#sobre p{
+  margin-bottom: 2.5em;
+  max-width: 1000px;
+
+}
+
+#sobre .botao{
+  background-color: #f1f1f1;
+  color: #1c1c1c;
+}
+
+#fotos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#fotos h2{
+  margin-bottom: 20px;
+
+}
+
+#fotos img{
+  width: 100%;
+}
+
+#contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding:20px;
+
+}
+
+#contato h2{
+  color: #000000;
+
+}
+
+#contato div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#esq {
+text-align: center;
+}
+#dir{
+text-align: center;
+}
+/* rodapé */
+footer {
+text-align: center;
+padding:10px;
+background-color: #191970;
+color:#FFFFFF;
+}
+
+footer a{
+text-decoration: none;
+color:#00FFFF;
+}
+
+
+/* Configurando Mídias QUeries - para ajustes de tela deixando responsivo adaptável ao tipo de tela que carregar o site */
+@media screen and (min-width:768px){
+  //ajustando para telas com resolução maior que 768px
+
+  /*nav*/
+  nav{
+    flex-direction: column;
+    justify-content:space-arround;
+  }
+
+  nav ul {
+    flex-direction: row;
+    width: 70%
+  }
+
+  header{
+    height: 600px;
+    height: 60vh;
+    justify-content:center;
+  }
+
+  #sobre {
+    height: 250px;
+    height: 30vh;
+    justify-content:center;
+    min-height: 250px;
+
+  }
+
+  #servicos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-itens: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  servicos h2 {
+    text-align: center;
+    width: 100%;
+    
+  }
+
+  #servicos div {
+    flex-grow:1;
+    flex-basis: 150px;
+    padding: 0 10px;
+
+  }
+
+  //fotos lado a lado
+    #fotos {
+      flex-direction:row;
+      flex-wrap:wrap;
+
+    }
+    #fotos h2 {
+      width: 100%;
+      text-align: center;
+    }
+
+    #fotos img{
+      width: 25%;
+    }
+
+    #contato {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 500px;
+      margin: 0 auto;
+    }  
+
+    #contato h2, #contato p{
+      width: 100%
+    }
+}
+
+
+/* 
+Criando e configurando um botão embaixo do H1,H2,H3 colocar botão e criar botao como class nos locais que queira adicionar um botao
+
+
+
+---------------
+#servicos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+
+*/
+

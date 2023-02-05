@@ -1,0 +1,25 @@
+Sintaxe básica:
+
+    $(itemQueProcuramos).funcaoQueChama()
+        $ // Chama o jQuery;
+        (itemQueProcuramos) // Seletor estilo CSS;
+            OBS: Podemos usar múltiplos seletores usando a virgula ,
+        .funcaoQueChama() // A função que executamos;
+
+
+Funções de teste
+
+    .is("seletor") // Retorna true ou false
+
+
+Atributos
+
+    .attr("atrb") // Retorna o valor do atributo específicado;
+    .attr("atrb", "valor") // Passa valor para o atributo;
+    OBS: podemos usar {"atrb1":"valor1","atrb2":"valor2"} e passar
+         varios atributos ao mesmo tempo.
+    .css("parametro", "valor") // Adiciona no CSS
+    .css("{Código CSS aqui}") // Para adicionar múltiplos no CSS
+    .addClass("Classes Separadas") // Adiciona a(s) classe(s)
+    .removeClass("Classes Separadas") // Deleta a(s) classe(s)
+    .toggleClass("Classes Separadas") // Alterna a(s) classe(s)

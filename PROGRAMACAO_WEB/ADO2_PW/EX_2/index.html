@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+</head>
+<body>
+  <form onsubmit="Submit(event)">
+
+    <label for="num1">Numero 1:</label>
+    <br>
+    <input type="text" id="num1" name="num">
+    <br>
+    <label for="num2">Numero 2:</label>
+    <br>
+    <input type="text" id="num2" name="num">
+    <br>
+    <label for="num3">Numero 3:</label>
+    <br>
+    <input type="text" id="num3" name="num">
+    <br>
+    <label for="num4">Numero 4:</label>
+    <br>
+    <input type="text" id="num4" name="num">
+    <br>
+    <br>
+    <button>Submit</button>
+    <br>
+    <br>
+    <div id="call"></div>
+
+  </form>
+</body>
+<script>
+  function Submit(e){
+    e.preventDefault();
+    let numeros = document.getElementsByName("num");
+    let numero = [];
+    numeros.forEach((x) => {
+      let num = parseFloat(x.value);
+      numero.push(num)
+    })
+    let soma = numero.reduce((a, b) => a + b);
+    let media = soma / numero.length;
+
+    document.getElementById("call").innerHTML = `Media Aritmetica: ${media}`;
+  }
+</script>
+</html>
